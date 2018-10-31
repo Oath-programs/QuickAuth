@@ -26,7 +26,6 @@ $(function () {
 
 $(function () {
 	$("#confirm_delete_all").click(function() {
-		console.log("Deleting all");
 		var options = {};
 		options.delete_all = 1;
 		var location = "pebblejs://close#" + encodeURIComponent(JSON.stringify(options));
@@ -36,14 +35,12 @@ $(function () {
 
 $(function () {
 	$("#cancel").click(function() {
-		console.log("Cancelling");
 		document.location = "pebblejs://close";
 	});
 });
 
 $(function () {
 	$("#save").click(function() {
-		console.log("Submit");
 
 		var options = saveOptions();
 			  
@@ -56,8 +53,7 @@ $(function () {
 		else {
 			var return_to = getQueryParam('return_to', 'pebblejs://close#');
 			var location = return_to + encodeURIComponent(JSON.stringify(options));
-			console.log("Warping to:");
-			console.log(location);
+			
 			document.location = location;
 		}
 	});
